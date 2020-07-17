@@ -22,7 +22,9 @@ public class MemberDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	public MemberDao(DataSource dataSource) {
+		
 		this. jdbcTemplate = new JdbcTemplate(dataSource);
+
 	}
 	
 	public Member selectByEmail(String email) {
@@ -53,8 +55,6 @@ public class MemberDao {
 				return pstmt;
 			}
 
-			
-		
 		}, keyHolder);
 		Number keyValue = keyHolder.getKey();
 		member.setId(keyValue.longValue());
@@ -62,9 +62,8 @@ public class MemberDao {
 	}
 	
 	public void update(Member member) {
-		jdbcTemplate.update("update MEMBER set NAME = ?, PASSWORD = ? where IMAIL = ?", 
+		jdbcTemplate.update("update MEMBER set NAME = ?, PASSWORD = ? where EMAIL = ?", 
 				member.getName(), member.getPassword(), member.getEmail());
-		
 		
 	}
 	
