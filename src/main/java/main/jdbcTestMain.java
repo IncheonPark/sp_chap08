@@ -19,7 +19,7 @@ public class jdbcTestMain {
 	
 	private static void select() throws SQLException, ClassNotFoundException {
 		member = jt.select();
-		System.out.println(member.getId() + ":" + member.getEmail() + ":" + member.getName());
+		System.out.println(member.getId() + " : " + member.getEmail() + " : " + member.getName());
 	}
 
 }

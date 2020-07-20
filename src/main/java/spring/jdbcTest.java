@@ -18,7 +18,7 @@ public class jdbcTest {
 	
 	
 	public Member select() throws SQLException, ClassNotFoundException {
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		String url = "jdbc:mysql://localhost:3306/spring4fs?characterEncoding=utf8&serverTimezone=UTC";
 		
 		try {

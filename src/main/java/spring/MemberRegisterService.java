@@ -21,7 +21,7 @@ public class MemberRegisterService {
 			throw new AlreadyExistingMemberException("dup email" + req.getEmail());
 		}
 		
-		Member newMember = new Member(req.getEmail(), req.getName(), req.getPassword(), new Date());
+		Member newMember = new Member(req.getEmail(), req.getPassword(), req.getName(), new Date()); //Name과 Password의 위치가 바뀌어 있어서 값이 뒤바뀌어 생성됨.
 		memberDao.insert(newMember);
 	}
 
