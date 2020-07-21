@@ -10,7 +10,7 @@ public class ChangePasswordService {
 		this.memberDao = memberDao;
 	}
 	
-	@Transactional
+	@Transactional //애노테이션이 적용된 이 클래스에 트랜잭션 기능을 적용한 프록시 객체를 생성한다.
 	public void changePassword(String email, String oldPwd, String newPwd) {
 		Member member = memberDao.selectByEmail(email);
 		if (member == null) //회원 정보가 비어 있으면

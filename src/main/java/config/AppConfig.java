@@ -16,20 +16,20 @@ import spring.ChangePasswordService;
 import spring.MemberDao;
 
 @Configuration
-@EnableTransactionManagement
+@EnableTransactionManagement //자바 설정을 사용하는 경우 이 어노테이션 사용
 public class AppConfig {
 	
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
 		ComboPooledDataSource ds = new ComboPooledDataSource();
 		try {
-			ds.setDriverClass("com.mysql.jdbc.Driver");
+			ds.setDriverClass("com.mysql.cj.jdbc.Driver");
 		} catch (PropertyVetoException e) {
 			throw new RuntimeException(e);
 		}
 		ds.setJdbcUrl("jdbc:mysql://localhost/spring4fs");
-		ds.setUser("spring4");
-		ds.setPassword("spring4");
+		ds.setUser("spring44");
+		ds.setPassword("spring44");
 		return ds;
 	}
 	

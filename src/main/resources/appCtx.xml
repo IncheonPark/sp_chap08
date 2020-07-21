@@ -31,7 +31,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd" >
 	</bean>
 	
 	<bean id="memberRegSvc" class="spring.MemberRegisterService">
-		<constructor-arg ref="memberDao" ?
+		<constructor-arg ref="memberDao" />
 	</bean>
 	
 	<bean id="memberPrinter" class="spring.MemberPrinter">
